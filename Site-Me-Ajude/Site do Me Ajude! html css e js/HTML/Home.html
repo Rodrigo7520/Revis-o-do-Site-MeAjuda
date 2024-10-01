@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="PT-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS/estilo.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../Imagens/Slide1.JPG">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ME Ajude!</title>
+    <!--<span title="Espanhol"><a lang="PT-br" href="qa-html-language-declarations.es">Español</a></span>-->
+    <!--Criando botões para aumentar e diminuir o tamanho-->
+    <script>
+      function aumentarFonte() {
+        let corpo = document.querySelector('body');
+        let tamanhoAtual = window.getComputedStyle(corpo).fontSize;
+        let novoTamanho = parseFloat(tamanhoAtual) + 2; // Aumenta o tamanho em 2px
+        corpo.style.fontSize = novoTamanho + 'px';
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="../CSS/estilo.css">
-  <link rel="shortcut icon" type="image/x-icon" href="../Imagens/Slide1.JPG">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ME Ajude!</title>
-  <!--<span title="Espanhol"><a lang="PT-br" href="qa-html-language-declarations.es">Español</a></span>-->
-  <!--Criando botões para aumentar e diminuir o tamanho-->
-  <script>
-    function aumentarFonte() {
-      let corpo = document.querySelector('body');
-      let tamanhoAtual = window.getComputedStyle(corpo).fontSize;
-      let novoTamanho = parseFloat(tamanhoAtual) + 2; // Aumenta o tamanho em 2px
-      corpo.style.fontSize = novoTamanho + 'px';
-    }
-
-    function diminuirFonte() {
-      let corpo = document.querySelector('body');
-      let tamanhoAtual = window.getComputedStyle(corpo).fontSize;
-      let novoTamanho = parseFloat(tamanhoAtual) - 2; // Diminui o tamanho em 2px
-      corpo.style.fontSize = novoTamanho + 'px';
-    }
-  </script>
-</head>
+      function diminuirFonte() {
+        let corpo = document.querySelector('body');
+        let tamanhoAtual = window.getComputedStyle(corpo).fontSize;
+        let novoTamanho = parseFloat(tamanhoAtual) - 2; // Diminui o tamanho em 2px
+        corpo.style.fontSize = novoTamanho + 'px';
+      }
+    </script>
+  </head>
 
 <body>
   <header>
@@ -111,7 +110,7 @@
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </nav>
-<br>
+ <br>
   <center>
     <h1 data-lang="title">Bem-vindo ao Me Ajude!</h1>
     <p>Estamos muito felizes em tê-lo conosco! No <strong>Me Ajude!</strong>, acreditamos que pequenas ações podem causar grandes impactos. Nossa missão é conectar pessoas que querem fazer a diferença com aquelas que mais precisam de ajuda. Através de doações, campanhas solidárias e projetos comunitários, trabalhamos juntos para construir um futuro mais justo e solidário.</p>
@@ -185,12 +184,11 @@
       <img src="../Imagens/iconeSeta.jpg" alt="Voltar ao topo"> <!-- Substitua pelo caminho da sua imagem -->
     </a>
   </aside>
+
   <!-- Código do Rodapé -->
   <footer class="text-center text-lg-start bg-body-tertiary text-muted">
-    
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"></section>
-    
-    <!-- Section: Links  -->
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"></section>
+     <!-- Section: Links  -->
     <section class="">
       <div class="container text-center text-md-start mt-5">
         <!-- Grid row -->
@@ -205,7 +203,7 @@
               "Juntos, podemos transformar vidas e construir um futuro melhor. Participe e faça a diferença hoje!"
             </p>
           </div>
-                   <!-- Grid column -->
+          <!-- Grid column -->
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">
@@ -278,46 +276,44 @@
       </div>
       <br>
     </section>
-    <!-- Section: Links  -->
-
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
       Copyright &copy; 2024 MeAjude!@gmail.com - Todos os Direitos Reservados:
       <a class="text-reset fw-bold" href="https://meAjeit!@gmail.com/">meAjude!@gmail.com</a>
     </div>
     <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
-  <div vw class="enabled">
-    <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
-    </div>
+   </footer>
+    <!-- Footer -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
 
-    <!--JS do Vlibras-->
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-      new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
-  </div>
-  <script src=”https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js”></script>
-  <script src="script.js"></script>
-  </footer>
-  <!-- Footer -->
-  <div vw class="enabled">
-    <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
-    </div>
+      <!--JS do Vlibras-->
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+      </div>
+    <script src=”https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js”></script>
+    <script src="script.js"></script>
+    </footer>
+    <!-- Footer -->
+      <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
 
-    <!--JS do Vlibras-->
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-      new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
-  </div>
-  <script src=”https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js”></script>
-  <script src="script.js"></script>
-</body>
+        <!--JS do Vlibras-->
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+          new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+      </div>
+      <script src=”https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js”></script>
+      <script src="script.js"></script>
 
+  </body>
 </html>

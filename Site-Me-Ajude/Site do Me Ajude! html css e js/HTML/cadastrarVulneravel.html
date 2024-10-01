@@ -27,6 +27,19 @@
       corpo.style.fontSize = novoTamanho + 'px';
     }
   </script>
+  
+  <script>
+    function previewImage(event) {
+      var reader = new FileReader();
+      reader.onload = function(){
+        var output = document.getElementById('preview');
+        output.src = reader.result;
+        output.style.display = 'block';
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+    </script>
+
 </head>
 
 <body>
@@ -85,17 +98,17 @@
         <center><h2>Cadastrar Vulnerável</h2></center>
 
         <!-- Campo para upload de foto -->
-        <div class="form-group">
+          <div class="form-group">
             <label for="foto">Foto</label>
             <input type="file" class="form-control" id="foto" name="foto" accept="image/*" required onchange="previewImage(event)">
             <small class="form-text text-muted">Escolha uma foto de identificação.</small>
-        </div>
+          </div>
 
-        <!-- Pré-visualização da imagem -->
-        <div class="form-group">
+          <!-- Pré-visualização da imagem -->
+          <div class="form-group">
             <label>Visualização da Imagem:</label><br>
             <img id="preview" src="#" alt="Pré-visualização da Imagem" style="display:none; max-width: 200px; border: 1px solid #ccc; margin-top: 10px;">
-        </div>
+          </div>
 
         <div class="form-group">
             <label for="nome">Nome Completo</label>
