@@ -1,0 +1,490 @@
+/*Zerando as configurações de margem interna e externa*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/*item body para arrumar as fontes e o pano de fundo da página*/
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+    background-color: #ffffff;
+}
+/*icones para arrumar o cabeçario*/
+header{
+    background-color: rgb(190, 185, 185);
+    text-align: center;
+    color:black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/*===========================================================================================================================*/
+/* Efeito de justificação e estilo para parágrafos na página de campanha*/
+p {
+    text-align: justify; /* Justifica o texto */
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+    margin: 15px 0; /* Margem superior e inferior */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para efeitos de hover */
+}
+
+/* Efeito ao passar o mouse */
+p:hover {
+    background-color: #f8f9fa; /* Cor de fundo ao passar o mouse */
+    color: #333; /* Altera a cor do texto ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ao passar o mouse */
+    padding: 10px; /* Espaçamento interno ao passar o mouse */
+    border-radius: 5px; /* Arredonda as bordas */
+}
+/*===========================================================================================================================*/
+
+/*Itens para arrumar o footer*/
+/*footer{
+    background-color: rgb(5, 5, 5);
+    width: 100%;
+    height: 100%;
+    float: left;
+    font-size: 20px;
+    padding: 20px 10px 20px 10px;    
+}
+
+.title-footer{
+
+    color: #ccc;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+    font-size: 20px;
+    width: 100%;
+    float: left;
+    margin-bottom: 11px;
+}
+
+.footer .left{
+    width: 100%;
+    float: left;
+    border-right: 0;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.footer .title-footer .span{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+    font-weight: bold;
+}*/
+/*=============================================================================================================================*/
+/*Botões para trocar de idiomas*/
+#languageSwitcher {
+    font-size: 16px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+
+/*===========================================================================================================================*/
+/*Itens para arrumar o h*/
+.h1{
+   font-family: Georgia, 'Times New Roman', Times, serif;
+ 
+}
+
+/*===========================================================================================================================*/
+/*Itens para arrumar o cards do carrossel*/
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-text {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.card-button {
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #219150;
+}
+/*===========================================================================================================================*/
+/*Itens para arrumar o p*/
+/*p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}*/
+.card-text-container {
+    position: relative;
+  }
+  
+  .reduced-text {
+    display: block;
+    overflow: hidden; /* Oculta o texto excedente */
+    height: 40px; /* Altura reduzida */
+    transition: height 0.3s ease; /* Transição suave ao alterar a altura */
+  }
+  
+  .card-text-container:hover .reduced-text {
+    height: auto; /* Expande a altura ao passar o mouse */
+  }
+  
+  .full-text {
+    display: none; /* Oculta o texto completo por padrão */
+  }
+  
+  .card-text-container:hover .full-text {
+    display: block; /* Mostra o texto completo ao passar o mouse */
+    position: absolute; /* Mantém o texto na mesma posição do texto reduzido */
+    top: 0; /* Alinha ao topo do contêiner */
+    left: 0; /* Alinha à esquerda do contêiner */
+    right: 0; /* Alinha à direita do contêiner */
+    background: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente para o texto completo */
+    z-index: 1; /* Mantém o texto completo acima */
+  }
+
+  .card {
+    position: relative;
+    overflow: hidden; /* Para garantir que o texto não ultrapasse o card */
+  }
+
+  .card-text {
+    display: none; /* Esconder o texto completo por padrão */
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s ease; /* Transição suave */
+  }
+
+  .card:hover .card-text {
+    display: block; /* Mostrar texto completo ao passar o mouse */
+    opacity: 1; /* Torná-lo visível */
+  }
+
+  .card-body p:first-child {
+    display: block; /* Manter o primeiro parágrafo visível sempre */
+  }
+
+  .card-body {
+    position: relative;
+  }
+  
+
+/*===========================================================================================================================*/
+/*Itens para arrumar o pagination navegação das páginas fiquePorDentro noticia1 noticia2 noticia3*/
+.pagination{
+    float: right;
+    margin-bottom: 15px;
+}
+
+#botoes{
+    display: flex;
+    height: 100%;
+    width: 200%;
+    margin:auto;
+    margin-bottom: 0;  
+    justify-content: center;   
+
+}
+#btnAnte, #btnProx{
+    line-height: 200px;
+    font-size: 30px;
+    color:rgba(0,0,0,.5);
+    font-weight: bold;
+    cursor: pointer;
+}
+#btnAnte{
+    float: left;
+}
+
+#btnProx{
+    float: right;
+}
+
+/*===========================================================================================================================*/
+/*Itens para arrumar o share-buttons fiquePorDentro noticia1 noticia2 noticia3*/
+
+.share-buttons {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .share-buttons span {
+    margin-right: 8px;
+    font-weight: bold;
+  }
+  
+  .share-buttons a {
+    margin-left: 5px;
+  }
+  
+  .share-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /*=====================================================================================================*/
+  /*Itens para mexer na imagem na página o que fazemos*/
+ 
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-box {
+    position: relative;
+    max-width: 850px; /* Ajuste o tamanho conforme necessário */
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+}
+
+.left-image {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.right-image {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.center-image {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.center-image .text-overlay {
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*======================================================================================================*/
+/*código da página Doações */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: #007bff;
+    cursor: pointer;
+}
+
+button[type="reset"] {
+    background-color: #6c757d;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button[type="reset"]:hover {
+    background-color: #5a6268;
+}
+
+#qrcode {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*======================================================================================================*/
+/*código o botão para voltar para o topo da página*/
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px; /* Distância do fundo da tela */
+    right: 20px; /* Distância da direita da tela */
+    background-color:#333; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px; /* Centraliza o texto verticalmente */
+    font-size: 24px; /* Tamanho do ícone */
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: background-color 0.3s;
+}
+.back-to-top:hover {
+    background-color: #555; /* Cor de fundo quando hover */
+}
+.back-to-top img {
+    max-width: 30px; /* Tamanho do ícone da seta */
+}
+
+/*========================================================================================================================*/
+/* cards container */
+.card-container {
+    display: flex;
+    gap: 16px; /* Espaçamento entre os cards */
+    width: 80rem;
+    height: 25rem;
+    justify-content: center;
+  }
+  
+  .card {
+    flex: 1; /* Faz os cards ocuparem o mesmo espaço */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease;
+  }
+
+/*========================================================================================================================*/
+/* carrossel */
+.carousel-inner{
+    width: 50rem;
+    height: 50rem;
+}
+/*========================================================================================================================*/
+/*código o h2 na página que fazemos. */
+h2{
+    color: #0b1e7c;
+}
+/*==============================================================================================================================*/
+.logo-container img {
+    width: 100%;
+    height: 300px; /* Define uma altura fixa */
+    object-fit: cover; /* Faz a imagem se ajustar e cortar se necessário */
+  }
+ 
+/*==============================================================================================================================*/
+/*Colocoando a cor branca no rodapé e o corpo da página*/
+body {
+    background-color: white; /* Altere para a cor que desejar */
+  }
+  
+  footer {
+    background-color: white; /* Altere para a cor que desejar */
+  }
+
+/*==============================================================================================================================*/
+/*2. Efeito nas imagens dos alunos
+Para adicionar um efeito nas imagens, como um zoom ou desfoque quando o mouse passar por cima, você pode usar a seguinte regra CSS:*/
+.alunos-img img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .alunos-img img:hover {
+    transform: scale(1.1); /* Aumenta a imagem em 10% */
+    filter: brightness(1.2); /* Aumenta o brilho */
+  }
+/*==============================================================================================================================*/
+/*3. Ajustar o tamanho da barra de seleção de idioma
+Para ajustar o tamanho da barra de seleção de idioma e deixá-la com um tamanho mais padrão e elegante, você pode modificar o estilo do select:*/
+#languageSwitcher {
+    width: 150px; /* Define o tamanho padrão */
+    padding: 5px; /* Ajusta o espaçamento interno */
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+  }
+/*==============================================================================================================================*/
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.recovery-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+.confirmation {
+    margin-top: 20px;
+    color: rgb(52, 85, 194);
+}
+
+footer {
+    margin-top: 40px;
+}
+
+  

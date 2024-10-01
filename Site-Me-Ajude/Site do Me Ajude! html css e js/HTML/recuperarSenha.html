@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../CSS/estilo.css">
+        <link rel="shortcut icon" type="image/x-icon" href="../Imagens/Slide1.JPG">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recuperar Senha</title>
+        <!--<span title="Espanhol"><a lang="PT-br" href="qa-html-language-declarations.es">Español</a></span>-->
+        <!--Criando botões para aumentar e diminuir o tamanho-->
+        <script>
+          function aumentarFonte() {
+            let corpo = document.querySelector('body');
+            let tamanhoAtual = window.getComputedStyle(corpo).fontSize;
+            let novoTamanho = parseFloat(tamanhoAtual) + 2; // Aumenta o tamanho em 2px
+            corpo.style.fontSize = novoTamanho + 'px';
+          }
+      
+          function diminuirFonte() {
+            let corpo = document.querySelector('body');
+            let tamanhoAtual = window.getComputedStyle(corpo).fontSize;
+            let novoTamanho = parseFloat(tamanhoAtual) - 2; // Diminui o tamanho em 2px
+            corpo.style.fontSize = novoTamanho + 'px';
+          }
+        </script>
+    </head>
+      
+    <body>
+        <header>
+          <span id='topo'></span>
+              <div class="logo-container">
+               <img src="../Imagens/MeAjudaNovo.jpg" alt="Logo">
+              </div>
+            
+             <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="../HTML/Home.html">Me Ajude!</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  <!--<li class="nav-item">
+                    <a class="nav-link" href="Doacao.html">Doações</a>
+                  </li>-->
+                  <li class="nav-item">
+                    <a class="nav-link" href="../HTML/fiquePorDentro.html">Fique Por Dentro</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="campanhas.html">Campanhas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="quemSomos.html">Sobre Nós</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="../HTML/entrar.html">Entrar</a>
+                  </li>
+                </ul>     
+                <form class="d-flex me-3">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-secondary" type="submit">Pesquisar</button>
+                </form>
+                
+                <select id="languageSwitcher" class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                  <option value="pt">Português</option>
+                  <option value="en">English</option>
+                  <option value="es">Español</option>
+                </select>
+                <div class="d-flex">
+                  <button onclick="diminuirFonte();" class="btn btn-secondary me-2">A-</button>
+                  <button onclick="aumentarFonte();" class="btn btn-secondary">A+</button>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </header>
+
+    <div class="recovery-container">
+      <form action="../PHP/processarCadastro.php" method="POST"> 
+      <center><h2>Recuperar Senha</h2></center>
+        <form id="recoveryForm">
+            <div class="mb-3">
+                <label for="emailOrPhone" class="form-label">Insira seu email ou número de telefone:</label>
+                <input type="text" id="emailOrPhone" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Escolha o método de recuperação:</label><br>
+                <div class="form-check">
+                    <input type="radio" id="emailOption" name="recoveryMethod" value="email" class="form-check-input" checked>
+                    <label for="emailOption" class="form-check-label">Email</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="smsOption" name="recoveryMethod" value="sms" class="form-check-input">
+                    <label for="smsOption" class="form-check-label">SMS</label>
+                </div>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Recuperar Senha</button><br>
+              <button type="reset" class="btn btn-secondary">Limpar</button><br>
+              <button type="button" class="btn btn-secondary" onclick="history.back()">Voltar</button>
+            </div>
+        </form>
+        <div id="confirmationMessage" class="confirmation" style="display: none;"></div>
+    </div>
+
+    <aside>
+        <a href="#topo" class="back-to-top">
+          <img src="../Imagens/iconeSeta.jpg" alt="Voltar ao topo"> <!-- Substitua pelo caminho da sua imagem -->
+        </a>
+      </aside>
+      <!-- Código do Rodapé -->
+      <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+        
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"></section>
+        
+        <!-- Section: Links  -->
+        <section class="">
+          <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- Content -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  <i class="fas fa-gem me-3"></i>Me Ajude!
+                </h6>
+                <p>
+                  "Juntos, podemos transformar vidas e construir um futuro melhor. Participe e faça a diferença hoje!"
+                </p>
+              </div>
+                       <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Quem Somos
+                </h6>
+                <p>
+                  <a href="../HTML/quemSomos.html" class="text-reset">Sobre Nós</a>
+                </p>
+                <p>
+                  <a href="../HTML/queFazemos.html" class="text-reset">Nossas Campanhas</a>
+                </p>
+                <p>
+                  <a href="../HTML/entrar.html" class="text-reset">Cadastrar Usuário</a>
+                </p>
+                <p>
+                  <a href="fiquePorDentro.html" class="text-reset">Fique por Dentro</a>
+                </p>
+              </div>
+              
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Doações / Nossa localização
+                </h6>
+                <p>
+                  <a href="../HTML/Doacao.html" class="text-reset">Como doar</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Nosso Local</a>
+                </p>
+                <!--<p>
+                  <a href="#!" class="text-reset">Orders</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Help</a>
+                </p>-->
+              </div>
+                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">Contatos</h6>
+                    <p class="fas fa-home me-3">Av. Venancio Aires, 93 - Cidade Baixa, RS, 90040-191</p>
+                    <p class="fas fa-envelope me-3">meAjude!@gmail.com</p>
+                    <p class="fas fa-phone me-3">(51) 99999-9999</p>
+                    <p class="fas fa-print me-3">(51) 99999-9999</p>
+                  </div>
+            </div>
+            <!-- Grid row -->
+          </div>
+          <div align="right">
+            <span>Conecte-se conosco nas redes sociais:</span>
+            <a href="https://www.facebook.com" class="me-4 text-reset"><img src="../Imagens/face.jpg" width="30px"
+                height="30px"/></a>
+              <i class="fab fa-facebook-f"></i>
+            
+            <a href="https://www.twitter.com" class="me-4 text-reset"><img src="../Imagens/imgtwitter2.jpg" width="30px"
+                height="23px"/></a>
+              <i class="fab fa-twitter"></i>
+            
+            <a href="" class="me-4 text-reset"><img src="../Imagens/imgGoogle.jpg" width="30px" height="30px"/></a>
+              <i class="fab fa-google"></i>
+            
+            <a href="https://www.instagram.com" class="me-4 text-reset"><img src="../Imagens/instagram.jpg" width="23px"
+                height="23px"/></a>
+              <i class="fab fa-instagram"></i>
+            
+            <a href="https://br.linkedin.com/" class="me-4 text-reset"><img src="../Imagens/likedin.jpg" width="23px"
+                height="23px"/></a>
+              <i class="fab fa-linkedin"></i>
+            
+          </div>
+          <br>
+        </section>
+        
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          Copyright &copy; 2024 meAjude!@gmail.com - Todos os Direitos Reservados:
+          <a class="text-reset fw-bold" href="https://meAjeit!@gmail.com/">meAjude!@gmail.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+      <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    
+        <!--JS do Vlibras-->
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+          new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+      </div>
+      <script src=”https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js”></script>
+      <script src="script.js"></script>
+      </footer>
+      <!-- Footer -->
+      <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    
+        <!--JS do Vlibras-->
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+          new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+      </div>
+      <script src=”https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js”></script>
+      <script src="script.js"></script>
+
+    <script>
+        document.getElementById('recoveryForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const emailOrPhone = document.getElementById('emailOrPhone').value;
+            const recoveryMethod = document.querySelector('input[name="recoveryMethod"]:checked').value;
+
+            let message = '';
+            if (recoveryMethod === 'email') {
+                message = `Um email foi enviado para ${emailOrPhone} com instruções para redefinir sua senha.`;
+            } else {
+                message = `Um SMS foi enviado para ${emailOrPhone} com instruções para redefinir sua senha.`;
+            }
+
+            document.getElementById('confirmationMessage').textContent = message;
+            document.getElementById('confirmationMessage').style.display = 'block';
+        });
+
+        function aumentarFonte() {
+            let corpo = document.querySelector('body');
+            let tamanhoAtual = window.getComputedStyle(corpo).fontSize;
+            let novoTamanho = parseFloat(tamanhoAtual) + 1 + 'px';
+            corpo.style.fontSize = novoTamanho;
+        }
+
+        function diminuirFonte() {
+            let corpo = document.querySelector('body');
+            let tamanhoAtual = window.getComputedStyle(corpo).fontSize;
+            let novoTamanho = parseFloat(tamanhoAtual) - 1 + 'px';
+            corpo.style.fontSize = novoTamanho;
+        }
+    </script>
+</body>
+</html>
