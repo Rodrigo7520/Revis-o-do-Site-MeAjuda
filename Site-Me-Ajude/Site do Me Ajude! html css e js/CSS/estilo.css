@@ -487,4 +487,15 @@ footer {
     margin-top: 40px;
 }
 
-  
+/*==============================================================================================================================================================*/
+/*Muldura de imagem da página de cadastro de vulneráveis*/
+.meu-cabecalho {
+    width: auto;
+ }
+ img {
+     margin: 10px 0 0 0;
+     position: relative;
+     right: 8.4em;
+     border: 1px solid;
+     border-radius: 10px;
+ }
