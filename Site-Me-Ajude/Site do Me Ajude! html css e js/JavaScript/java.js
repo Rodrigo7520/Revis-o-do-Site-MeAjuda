@@ -105,7 +105,7 @@ function generateQRCode() {
         messageElement.innerText = `Um código de recuperação foi enviado via SMS para o número: ${contact}`;
     }
 });*/
-
+/*======================================================================================================== */
 
             function previewImage(event) {
               var reader = new FileReader();

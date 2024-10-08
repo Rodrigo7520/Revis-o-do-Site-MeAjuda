@@ -1,120 +1,114 @@
 <!DOCTYPE html>
-<html lang="PT-br">
+<html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="../CSS/estilo.css">
-  <link rel="shortcut icon" type="image/x-icon" href="../Imagens/Slide1.JPG">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <title>Faça Sua Doação</title>
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
-  <script>
-    function aumentarFonte() {
-      let corpo = document.querySelector('body');
-      let tamanhoAtual = window.getComputedStyle(corpo).fontSize;
-      let novoTamanho = parseFloat(tamanhoAtual) + 2; // Aumenta o tamanho em 2px
-      corpo.style.fontSize = novoTamanho + 'px';
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS/estilo.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../Imagens/Slide1.JPG">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Editar Usuário</title>
 
-    function diminuirFonte() {
-      let corpo = document.querySelector('body');
-      let tamanhoAtual = window.getComputedStyle(corpo).fontSize;
-      let novoTamanho = parseFloat(tamanhoAtual) - 2; // Diminui o tamanho em 2px
-      corpo.style.fontSize = novoTamanho + 'px';
-    }
+    <script>
+        function aumentarFonte() {
+            let corpo = document.querySelector('body');
+            let tamanhoAtual = window.getComputedStyle(corpo).fontSize;
+            let novoTamanho = parseFloat(tamanhoAtual) + 2; // Aumenta o tamanho em 2px
+            corpo.style.fontSize = novoTamanho + 'px';
+        }
 
-    function validaformulario() {
-      if (nome == "" && cpf == "" && valor == "" && metodoPagamento == "") {
-        alert("Preencha todos os campos!");
-        return false;
-      } else {
-        alert("Obrigado por sua doação!");
-      }
-    }
+        function diminuirFonte() {
+            let corpo = document.querySelector('body');
+            let tamanhoAtual = window.getComputedStyle(corpo).fontSize;
+            let novoTamanho = parseFloat(tamanhoAtual) - 2; // Diminui o tamanho em 2px
+            corpo.style.fontSize = novoTamanho + 'px';
+        }
 
-    function GeraQRCode() {
-      var conteudo = document.getElementById('conteudoQRCode').value;
-      var GoogleCharts = 'https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl=';
-      var imagemQRCode = GoogleCharts + conteudo;
-      document.getElementById('imageQRCode').src = imagemQRCode;
-    }
-  </script>
-  <style>
-    .donation-info {
-      transition: all 0.3s ease; /* Efeito de transição */
-      opacity: 0.9;
-      margin: 20px 0;
-    }
-    
-    .donation-info:hover {
-      opacity: 1; /* Efeito ao passar o mouse */
-      transform: scale(1.02); /* Leve aumento ao passar o mouse */
-    }
+        function validarFormulario() {
+            const email = document.forms["cadastro"]["email"].value;
+            const usuario = document.forms["cadastro"]["usuario"].value;
+            const senha = document.forms["cadastro"]["senha"].value;
+            const confirmarSenha = document.forms["cadastro"]["confirmarSenha"].value;
 
-    .image-container {
-      text-align: center; /* Centraliza a imagem */
-      margin: 20px 0; /* Espaço acima e abaixo da imagem */
-    }
+            if (email === "" || usuario === "" || senha === "" || confirmarSenha === "") {
+                alert("Todos os campos são obrigatórios!");
+                return false;
+            }
 
-    .donation-text {
-      font-size: 1.1rem; /* Ajuste o tamanho da fonte conforme necessário */
-      line-height: 1.6; /* Melhor espaçamento entre linhas */
-    }
-  </style>
+            if (senha !== confirmarSenha) {
+                alert("As senhas não correspondem!");
+                return false;
+            }
+
+            alert("Informações atualizadas com sucesso!");
+            return true;
+        }
+    </script>
 </head>
 
 <body>
-  <header>
-    <span id='topo'></span>
-    <div class="logo-container">
-      <img src="../Imagens/MeAjudaNovo.jpg" alt="Logo">
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="../HTML/Home.html">Me Ajude!</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-            <li class="nav-item">
-              <a class="nav-link" href="Doacao.html">Doações</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../HTML/fiquePorDentro.html">Fique Por Dentro</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="campanhas.html">Campanhas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="quemSomos.html">Sobre Nós</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../HTML/entrar.html">Entrar</a>
-            </li>
-          </ul>
-          <form class="d-flex me-3">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-secondary" type="submit">Pesquisar</button>
-          </form>
-
-          <select id="languageSwitcher" class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <option value="pt">Português</option>
-            <option value="en">English</option>
-            <option value="es">Español</option>
-          </select>
-          <div class="d-flex">
-            <button onclick="diminuirFonte();" class="btn btn-secondary me-2">A-</button>
-            <button onclick="aumentarFonte();" class="btn btn-secondary">A+</button>
-          </div>
+    <header>
+        <span id="topo"></span>
+        <div class="logo-container">
+            <img src="../Imagens/MeAjudaNovo.jpg" alt="Logo">
         </div>
-      </div>
-    </nav>
-  </header>
 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../HTML/Home.html">Me Ajude!</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <!--<li class="nav-item"><a class="nav-link" href="Doacao.html">Doações</a></li>-->
+                        <li class="nav-item"><a class="nav-link" href="../HTML/fiquePorDentro.html">Fique Por Dentro</a></li>
+                        <li class="nav-item"><a class="nav-link" href="campanhas.html">Campanhas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="quemSomos.html">Sobre Nós</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../HTML/entrar.html">Entrar</a></li>
+                    </ul>
+                    <form class="d-flex me-3">
+                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                        <button class="btn btn-secondary" type="submit">Pesquisar</button>
+                    </form>
+                    <select id="languageSwitcher" class="form-select mx-2">
+                        <option value="pt">Português</option>
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                    </select>
+                    <div class="d-flex">
+                        <button onclick="diminuirFonte();" class="btn btn-secondary me-2">A-</button>
+                        <button onclick="aumentarFonte();" class="btn btn-secondary">A+</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
   <main>
+    
+    <main class="container text-center">
+      <center>
+        <h1>Ajudar quem precisa nunca foi tão fácil!</h1>
+      </center>
+      <br><br>
+      <p>Acreditamos que cada ato de bondade tem o poder de gerar mudanças significativas. Ao se juntar a nós, você não apenas apoia nossa causa, mas também se torna parte de uma comunidade dedicada a ajudar aqueles que mais precisam. Sua generosidade nos permite realizar campanhas de arrecadação, fornecer alimentos, roupas e recursos para famílias em situação de vulnerabilidade.</p>
+      <br>
+      <p>
+        Além disso, sua contribuição nos ajuda a desenvolver programas de capacitação e inclusão social, proporcionando oportunidades para que as pessoas se reergam e melhorem suas condições de vida. Estamos comprometidos em criar um impacto duradouro, e isso só é possível com o apoio de pessoas como você.
+      </p>
+      <br>
+      <p>
+        Juntos, podemos alcançar mais do que jamais poderíamos individualmente. Cada gesto de solidariedade, seja através de doações, doações de tempo ou compartilhando nossas iniciativas, fortalece nossa rede de apoio e amplia nossa capacidade de ajudar. Vamos unir forças para espalhar esperança e transformar desafios em oportunidades para todos.
+      </p>
+      <br>
+      <p>
+        Agradecemos de coração por considerar fazer parte dessa jornada conosco. Sua contribuição é um passo importante para um mundo mais justo e igualitário. Juntos, vamos fazer a diferença!
+      </p>
+    </main>
+    <br><br>
+
     <h1>Formulário de Doação</h1>
 
     <div class="image-container">
@@ -147,30 +141,9 @@
       <button type="button" onclick="GeraQRCode()">Gerar QR Code</button>
       <button type="submit" onclick="validaformulario()">Enviar</button>
       <button type="reset">Limpar</button>
-    </form>
+    </form><br>
 
     <div id="qrcode"></div>
-  
-    <main class="container text-center">
-      <center>
-        <h1>Ajudar quem precisa nunca foi tão fácil!</h1>
-      </center>
-      <br><br>
-      <p>Acreditamos que cada ato de bondade tem o poder de gerar mudanças significativas. Ao se juntar a nós, você não apenas apoia nossa causa, mas também se torna parte de uma comunidade dedicada a ajudar aqueles que mais precisam. Sua generosidade nos permite realizar campanhas de arrecadação, fornecer alimentos, roupas e recursos para famílias em situação de vulnerabilidade.</p>
-      <br>
-      <p>
-        Além disso, sua contribuição nos ajuda a desenvolver programas de capacitação e inclusão social, proporcionando oportunidades para que as pessoas se reergam e melhorem suas condições de vida. Estamos comprometidos em criar um impacto duradouro, e isso só é possível com o apoio de pessoas como você.
-      </p>
-      <br>
-      <p>
-        Juntos, podemos alcançar mais do que jamais poderíamos individualmente. Cada gesto de solidariedade, seja através de doações, doações de tempo ou compartilhando nossas iniciativas, fortalece nossa rede de apoio e amplia nossa capacidade de ajudar. Vamos unir forças para espalhar esperança e transformar desafios em oportunidades para todos.
-      </p>
-      <br>
-      <p>
-        Agradecemos de coração por considerar fazer parte dessa jornada conosco. Sua contribuição é um passo importante para um mundo mais justo e igualitário. Juntos, vamos fazer a diferença!
-      </p>
-    </main>
-    <br><br><br>
 
     <center><button type="button" class="btn btn-secondary" onclick="history.back()">Voltar</button></center>
   
@@ -231,7 +204,7 @@
               <a href="../HTML/Doacao.html" class="text-reset">Como doar</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Nosso Local</a>
+              <a href="../HTML/nossaLocalização.html" class="text-reset">Nosso Local</a>
             </p>
             <!--<p>
               <a href="#!" class="text-reset">Orders</a>
